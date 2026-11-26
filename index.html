@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explore remote technical careers and discover relevant learning resources.">
+  <title>Career Opportunity Intelligence</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <script type="module" src="./js/main.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="site-header">
+    <a class="brand" href="./index.html">Career <span>Opportunity Intelligence</span></a>
+    <nav aria-label="Main navigation">
+      <a href="#jobs">Explore jobs</a>
+      <a href="#skills">My skills</a>
+    </nav>
+  </header>
+  <main id="main-content" class="layout">
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">WDD 330 · Final Project</p>
+      <h1 id="page-title">Explore remote developer opportunities</h1>
+      <p>Search real opportunities, compare skills, and discover what to learn next.</p>
+    </section>
+    <section id="jobs" aria-labelledby="jobs-title" class="panel">
+      <h2 id="jobs-title">Job explorer</h2>
+      <form id="job-search-form" class="search-form">
+        <label for="job-query">Job keyword</label>
+        <div class="search-row">
+          <input id="job-query" name="query" type="search" placeholder="e.g. JavaScript" required>
+          <button type="submit">Search jobs</button>
+        </div>
+      </form>
+      <p id="job-status" role="status" aria-live="polite">Job search is not connected yet.</p>
+      <div id="job-results" class="results"></div>
+    </section>
+    <section id="skills" aria-labelledby="skills-title" class="panel">
+      <h2 id="skills-title">My skills</h2>
+      <p>In a later milestone, this section will let users maintain a skills profile and compare it with job requirements.</p>
+    </section>
+  </main>
+  <footer class="site-footer">
+    <p>Career Opportunity Intelligence · WDD 330 student project</p>
+  </footer>
+</body>
+</html>
