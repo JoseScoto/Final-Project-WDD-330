@@ -34,3 +34,37 @@ button:hover { background: #5eead4; }
   button { transition: background-color .2s ease, transform .2s ease; }
   button:hover { transform: translateY(-1px); }
 }
+
+/* Card Styling */
+.job-card {
+  background: #0b1220;
+  border: 1px solid #334155;
+  border-radius: 0.75rem;
+  padding: 1.25rem;
+}
+
+.job-card h3 {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+  color: #f8fafc;
+}
+
+.job-company {
+  color: #5eead4;
+  font-weight: 600;
+}
+
+.job-link {
+  display: inline-block;
+  margin-top: 0.75rem;
+  padding: 0.3rem 1rem;
+  background: #2dd4bf;
+  color: #0b1220;
+  border-radius: 0.5rem;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.job-link:hover {
+  background: #5eead4;
+}

@@ -1,7 +1,11 @@
+// This section coordinates the search, filtering and UI updates
+
 import { getJobs } from "./jobApi.js";
+import { renderJobs } from "./jobUI.js";
 
 const searchForm = document.querySelector("#job-search-form");
 const jobStatus = document.querySelector("#job-status");
+const jobResults = document.querySelector("#job-results");
 
 searchForm.addEventListener("submit", async (event) => {
   event.preventDefault(); // To prevent HTML form reloading the page
@@ -17,6 +21,7 @@ searchForm.addEventListener("submit", async (event) => {
   }
 
   jobStatus.textContent = "Loading jobs...";
+  jobResults.replaceChildren(); // Removes old cards every new search
 
   try {
     const jobs = await getJobs();
@@ -35,18 +40,10 @@ searchForm.addEventListener("submit", async (event) => {
       return titleMatches || tagsMatch;
     });
 
-    console.table(
-      matchingJobs.slice(0, 5).map((job) => ({
-        title: job.title,
-        company: job.company,
-        location: job.location,
-        salary: job.salary,
-        url: job.url
-      }))
-    );
+    renderJobs(matchingJobs);
 
     jobStatus.textContent =
-      `${matchingJobs.length} matching jobs found. Check the Console.`;
+      `${matchingJobs.length} matching jobs found.`;
 
   } catch (error) {
     console.error("Job search failed:", error);
